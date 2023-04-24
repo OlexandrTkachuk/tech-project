@@ -1,3 +1,22 @@
+import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+
+import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
+import Layout from './Layout/Layout';
+
+const HomePage = lazy(() => import('../pages/Home'));
+const TweetsPage = lazy(() => import('../pages/Tweets'));
+
 export const App = () => {
-  return <div>React homework template</div>;
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+
+          <Route path="/tweets" element={<TweetsPage />} />
+        </Route>
+      </Routes>
+    </Suspense>
+  );
 };

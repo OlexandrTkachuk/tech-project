@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import ScrollToTop from 'units/scrollToTop';
 
 import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
 import Layout from './Layout/Layout';
@@ -9,14 +10,17 @@ const TweetsPage = lazy(() => import('../pages/Tweets'));
 
 export const App = () => {
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+    <>
+      <ScrollToTop />
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
 
-          <Route path="/tweets" element={<TweetsPage />} />
-        </Route>
-      </Routes>
-    </Suspense>
+            <Route path="/tweets" element={<TweetsPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </>
   );
 };

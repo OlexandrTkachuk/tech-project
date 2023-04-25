@@ -69,8 +69,14 @@ const TodoList = () => {
     { keepPreviousData: true }
   );
 
-  const handlePrevPage = () => setPage(prev => (prev -= 1));
-  const handleNextPage = () => setPage(prev => (prev += 1));
+  const handlePrevPage = () => {
+    window.scrollTo(0, 0);
+    setPage(prev => (prev -= 1));
+  };
+  const handleNextPage = () => {
+    window.scrollTo(0, 0);
+    setPage(prev => (prev += 1));
+  };
   const handleFollowUser = users => updateUserMutation.mutate(users);
 
   if (isError) {

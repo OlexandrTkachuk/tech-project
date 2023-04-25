@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 26px;
 `;
 
 export const FilterWrapper = styled.div`
@@ -20,7 +21,7 @@ export const FilterWrapper = styled.div`
 `;
 
 export const FilterHeading = styled.h2`
-  color: black;
+  color: #000;
   font-size: 16px;
   text-decoration: none;
   font-weight: 500;
@@ -37,14 +38,14 @@ export const BackLink = styled(NavLink)`
   align-items: center;
   gap: 4px;
   padding: 8px 0;
-  color: black;
+  color: #000;
+  font-size: 16px;
   text-decoration: none;
   font-weight: 500;
   text-transform: uppercase;
   :hover {
     color: orangered;
   }
-  margin-bottom: 20px;
 `;
 
 export const TodoGallery = styled.ul`

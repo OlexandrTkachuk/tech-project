@@ -18,6 +18,8 @@ export const App = () => {
             <Route index element={<HomePage />} />
 
             <Route path="/tweets" element={<TweetsPage />} />
+
+            <Route path="*" element={<HomePage />} />
           </Route>
         </Routes>
       </Suspense>

@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 26px;
+  position: relative;
 `;
 
 export const FilterWrapper = styled.div`

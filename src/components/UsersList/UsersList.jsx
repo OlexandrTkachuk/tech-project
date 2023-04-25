@@ -26,6 +26,7 @@ import {
   Filter,
   Wrapper,
 } from './UsersList.styled';
+import ButtonLoadingSpinner from 'components/ButtonLoadingSpinner/ButtonLoadingSpinner';
 
 const options = [
   { value: 'all', label: 'All' },
@@ -53,7 +54,7 @@ const TodoList = () => {
     },
   });
 
-  const { data, isLoading, isError } = useQuery(
+  const { data, isError, isFetching, isLoading } = useQuery(
     ['users', page, selectedOption],
     () => fetchUsers(page, selectedOption),
     { keepPreviousData: true }
@@ -93,6 +94,9 @@ const TodoList = () => {
             <BackLink to={backLinkHref}>Back home</BackLink>
 
             <FilterWrapper>
+              {isFetching && <ButtonLoadingSpinner />}
+              {/* <ButtonLoadingSpinner /> */}
+
               <FilterHeading>Filter by status:</FilterHeading>
               <Filter
                 name="Filter by status"
@@ -110,6 +114,7 @@ const TodoList = () => {
                   key={user.id}
                   user={user}
                   onFollow={handleFollowUser}
+                  isFetching={isFetching}
                 />
               );
             })}

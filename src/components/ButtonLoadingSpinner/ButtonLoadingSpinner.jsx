@@ -1,6 +1,6 @@
 import { Circles } from 'react-loader-spinner';
 
-const LoadingSpinner = () => {
+const ButtonLoadingSpinner = () => {
   return (
     <div
       style={{
@@ -8,25 +8,22 @@ const LoadingSpinner = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 100,
-        gap: 20,
+        position: 'absolute',
       }}
     >
       <Circles
-        height="80"
-        width="80"
+        height="30"
+        width="30"
         color="#7440ec"
         ariaLabel="circles-loading"
         wrapperStyle={{
-          display: 'block',
-          margin: '0 auto 20px',
+          position: 'absolute',
+          left: -40,
         }}
-        wrapperClass=""
         visible={true}
       />
-      <span>Loading...</span>
     </div>
   );
 };
 
-export default LoadingSpinner;
+export default ButtonLoadingSpinner;

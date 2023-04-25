@@ -8,10 +8,10 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  // align-items: center;
   justify-content: space-between;
   margin-bottom: 26px;
-  position: relative;
 `;
 
 export const FilterWrapper = styled.div`
@@ -19,6 +19,7 @@ export const FilterWrapper = styled.div`
   align-items: center;
   width: 390px;
   justify-content: space-between;
+  position: relative;
 `;
 
 export const FilterHeading = styled.h2`
@@ -35,7 +36,8 @@ export const Filter = styled(Select)`
 `;
 
 export const BackLink = styled(NavLink)`
-  display: inline-flex;
+  display: block;
+  width: 120px;
   align-items: center;
   gap: 4px;
   padding: 8px 0;

@@ -9,6 +9,7 @@ const ButtonLoadingSpinner = () => {
         justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
+        right: -40,
       }}
     >
       <Circles
@@ -18,7 +19,6 @@ const ButtonLoadingSpinner = () => {
         ariaLabel="circles-loading"
         wrapperStyle={{
           position: 'absolute',
-          left: -40,
         }}
         visible={true}
       />

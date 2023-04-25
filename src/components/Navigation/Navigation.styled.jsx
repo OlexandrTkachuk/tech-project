@@ -18,7 +18,7 @@ export const StyledNavLink = styled(NavLink)`
 export const NavigationWrapper = styled.div`
   display: flex;
   width: 100%;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 20px 0;

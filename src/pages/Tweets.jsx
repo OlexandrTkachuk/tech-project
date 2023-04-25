@@ -1,9 +1,9 @@
-import TodoList from 'components/TodoList/TodoList';
+import UsersList from 'components/UsersList/UsersList';
 
 const Tweets = () => {
   return (
     <main>
-      <TodoList />
+      <UsersList />
     </main>
   );
 };

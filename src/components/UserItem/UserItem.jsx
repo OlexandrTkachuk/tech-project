@@ -9,15 +9,15 @@ import {
   FollowButton,
   FollowingButton,
   TextFollowers,
-} from './TodoItem.styled';
+} from './UserItem.styled';
 
 // images
 import logo from '../../images/Logo.png';
 import background from '../../images/background.png';
 import frame from '../../images/Ellipse.png';
 
-const TodoItem = ({ user }) => {
-  const { avatar, tweets, followers, ifFollowing } = user;
+const TodoItem = ({ user, onFollow }) => {
+  const { avatar, tweets, followers, isFollowing } = user;
 
   return (
     <>
@@ -34,12 +34,12 @@ const TodoItem = ({ user }) => {
           {followers.toLocaleString('en-US')} followers
         </TextFollowers>
 
-        {!ifFollowing ? (
-          <FollowButton onClick={() => {}} type="button">
+        {!isFollowing ? (
+          <FollowButton onClick={() => onFollow(user)} type="button">
             follow
           </FollowButton>
         ) : (
-          <FollowingButton onClick={() => {}} type="button">
+          <FollowingButton onClick={() => onFollow(user)} type="button">
             following
           </FollowingButton>
         )}

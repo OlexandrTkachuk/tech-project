@@ -1,8 +1,35 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import Select from 'react-select';
 
 export const Container = styled.div`
   max-width: 1200px;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const FilterWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 390px;
+  justify-content: space-between;
+`;
+
+export const FilterHeading = styled.h2`
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+`;
+
+export const Filter = styled(Select)`
+  width: 230px;
+  primary25: '#471ca9';
 `;
 
 export const BackLink = styled(NavLink)`
@@ -46,8 +73,15 @@ export const Button = styled.button`
   font-size: 18px;
   line-height: 1.2;
   text-transform: uppercase;
-  color: #373737;
+  color: #fff;
   cursor: pointer;
+  background-color: #7440ec;
+  border: none;
+
+  :disabled {
+    color: #000;
+    background-color: lightgrey;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
